@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.kabilova.mychat.com.kabilova.client.LoginActivity"
+    android:weightSum="1">
+
+    <TextView
+        android:text="@string/textViewUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewUsername"
+        android:layout_weight="0.10"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="casual"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:text="@string/textViewPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewPassword"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:fontFamily="casual"
+        android:layout_below="@+id/editTextUsername"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editTextPassword"
+        android:hint="Enter password"
+        android:singleLine="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:fontFamily="casual"
+        android:textAlignment="center"
+        android:layout_below="@+id/textViewPassword"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editTextUsername"
+        android:hint="Enter username"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:fontFamily="casual"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_below="@+id/textViewUsername"
+        android:layout_alignStart="@+id/editTextPassword" />
+
+    <Button
+        android:text="@string/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonLogin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textStyle="normal|bold"
+        android:fontFamily="casual"
+        android:layout_below="@+id/editTextPassword"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/newReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonNewReg"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        android:textStyle="normal|bold" />
+
+</RelativeLayout>

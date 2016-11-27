@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Welcome to MyChat</string>
+
+    <string name="textViewUsername">Username</string>
+    <string name="textViewPassword">Password</string>
+    <string name="buttonLogin">Login</string>
+    <string name="newReg">Create new account</string>
+
+    <string name="textViewEmail">Email</string>
+    <string name="textViewPass2">Password again</string>
+    <string name="buttonRegistration">Create account</string>
+    <string name="hasAccount">Already has account! Log in</string>
+</resources>
