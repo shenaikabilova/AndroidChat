@@ -7,9 +7,15 @@ import android.view.View;
 import android.widget.Button;
 
 import com.kabilova.mychat.R;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class LoginActivity extends AppCompatActivity {
-//jersey API
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,8 +25,10 @@ public class LoginActivity extends AppCompatActivity {
         newReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent createAccount = new Intent(LoginActivity.this, RegistrationActivity.class);
-                startActivity(createAccount);
+
+                RequestParams requestParams = new RequestParams();
+                requestParams.put("username", "aaa");
+                invokeWS(requestParams);
             }
         });
 
@@ -28,6 +36,25 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+            }
+        });
+    }
+
+    public void invokeWS (RequestParams requestParams) {
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get("http://10.0.2.2:3000/myapp/myresource", requestParams, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+                    Intent createAccount = new Intent(LoginActivity.this, RegistrationActivity.class);
+                    startActivity(createAccount);
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 
             }
         });
