@@ -24,9 +24,17 @@
         <processorPath useClasspath="true" />
         <module name="androidchat" />
       </profile>
+      <profile default="false" name="Annotation profile for server" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="server" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="androidchat" target="1.7" />
+      <module name="server" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
