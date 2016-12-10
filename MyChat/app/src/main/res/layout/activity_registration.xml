@@ -24,119 +24,95 @@
         android:textSize="14sp"
         android:textStyle="normal|bold" />
 
+    <Button
+        android:text="@string/hasAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonHasAccount"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:fontFamily="casual"
+        android:textSize="14sp"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/editTextPass1"
+        android:layout_toEndOf="@+id/textViewPass1"
+        android:layout_marginTop="139dp" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:ems="10"
-        android:layout_marginStart="41dp"
-        android:id="@+id/editTextUsername"
-        android:hint="Enter username"
-        android:textSize="14sp"
-        android:layout_alignBaseline="@+id/textViewUsername"
-        android:layout_alignBottom="@+id/textViewUsername"
-        android:layout_toEndOf="@+id/textViewUsername"
+        android:id="@+id/editTextPass1"
+        android:hint="@string/hintPass1"
         android:fontFamily="casual"
-        android:textAlignment="viewStart" />
+        android:textSize="14sp"
+        android:layout_below="@+id/editTextUsername"
+        android:layout_alignStart="@+id/editTextUsername" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editTextPass1"
-        android:hint="Enter password"
-        android:fontFamily="casual"
+        android:id="@+id/editTextUsername"
+        android:hint="@string/hintUsername"
         android:textSize="14sp"
-        android:layout_below="@+id/textViewEmail"
-        android:layout_alignStart="@+id/editTextEmail" />
+        android:fontFamily="casual"
+        android:textAlignment="viewStart"
+        android:layout_alignBaseline="@+id/textViewUsername"
+        android:layout_alignBottom="@+id/textViewUsername"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:text="@string/textViewPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textViewPass1"
-        android:layout_alignBaseline="@+id/editTextPass1"
-        android:layout_alignBottom="@+id/editTextPass1"
-        android:layout_alignStart="@+id/textViewEmail"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:fontFamily="casual"
         android:textSize="14sp"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:layout_alignBaseline="@+id/editTextPass1"
+        android:layout_alignBottom="@+id/editTextPass1"
+        android:layout_alignStart="@+id/textViewUsername" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editTextPass2"
+        android:hint="@string/hintPass2"
+        android:fontFamily="casual"
+        android:textSize="14sp"
+        android:layout_alignBaseline="@+id/textViewPass2"
+        android:layout_alignBottom="@+id/textViewPass2"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:text="@string/textViewPass2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textViewPass2"
-        android:layout_below="@+id/editTextPass1"
-        android:layout_alignStart="@+id/textViewPass1"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:fontFamily="casual"
         android:textSize="14sp"
-        android:textStyle="normal|bold" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editTextPass"
-        android:fontFamily="casual"
-        android:textSize="14sp"
-        android:hint="Enter password again"
-        android:layout_alignBaseline="@+id/textViewPass2"
-        android:layout_alignBottom="@+id/textViewPass2"
-        android:layout_alignStart="@+id/editTextPass1" />
+        android:textStyle="normal|bold"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/editTextPass1"
+        android:layout_alignStart="@+id/textViewPass1" />
 
     <Button
         android:text="@string/buttonRegistration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
         android:id="@+id/buttonRegistration"
-        android:layout_below="@+id/editTextPass"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        android:fontFamily="casual"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/editTextPass2"
         android:layout_centerHorizontal="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="14sp"
-        android:fontFamily="casual"
-        android:textStyle="normal|bold" />
+        android:layout_marginTop="14dp" />
 
-    <TextView
-        android:text="@string/textViewEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewEmail"
-        android:layout_below="@+id/editTextUsername"
-        android:layout_alignStart="@+id/textViewUsername"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:fontFamily="casual"
-        android:textSize="14sp"
-        android:textStyle="normal|bold" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editTextEmail"
-        android:hint="Enter email"
-        android:fontFamily="casual"
-        android:textSize="14sp"
-        android:layout_alignBaseline="@+id/textViewEmail"
-        android:layout_alignBottom="@+id/textViewEmail"
-        android:layout_alignStart="@+id/editTextUsername" />
-
-    <Button
-        android:text="@string/hasAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:id="@+id/buttonHasAccount"
-        android:layout_below="@+id/buttonRegistration"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:fontFamily="casual"
-        android:textSize="14sp"
-        android:textStyle="normal|bold" />
 </RelativeLayout>

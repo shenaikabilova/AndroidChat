@@ -1,13 +1,20 @@
 <resources>
     <string name="app_name">Welcome to MyChat</string>
 
+    <!-- Login Activity -->
     <string name="textViewUsername">Username</string>
     <string name="textViewPassword">Password</string>
     <string name="buttonLogin">Login</string>
     <string name="newReg">Create new account</string>
+    <string name="hintUsername">Enter username</string>
+    <string name="hintPass">Enter password</string>
 
+    <!-- Registration Activity -->
     <string name="textViewEmail">Email</string>
     <string name="textViewPass2">Password again</string>
     <string name="buttonRegistration">Create account</string>
     <string name="hasAccount">Already has account! Log in</string>
+    <string name="hintEnterUsername">Enter username</string>
+    <string name="hintPass1">Enter password</string>
+    <string name="hintPass2">Enter password again</string>
 </resources>
