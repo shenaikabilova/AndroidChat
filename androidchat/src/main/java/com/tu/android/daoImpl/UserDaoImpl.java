@@ -5,6 +5,8 @@ import com.tu.android.dao.UserDao;
 import com.tu.android.model.User;
 
 import java.sql.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by ShenaiKabilova
@@ -41,5 +43,29 @@ public class UserDaoImpl implements UserDao {
             e.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    public Set<User> getUsers() {
+        User user = new User();
+        Set<User> users = null;
+
+        try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/AndroidChat", "root", "123456")) {
+            final String QUERY = "SELECT username FROM users";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            users = new HashSet<>();
+
+            while (resultSet.next()) {
+                user.setUsername( resultSet.getString("username"));
+
+                users.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return users;
     }
 }
