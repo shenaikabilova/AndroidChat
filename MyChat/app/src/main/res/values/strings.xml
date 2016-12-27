@@ -17,4 +17,10 @@
     <string name="hintEnterUsername">Enter username</string>
     <string name="hintPass1">Enter password</string>
     <string name="hintPass2">Enter password again</string>
+
+    <!-- Friend List -->
+
+    <!-- ChatRoom -->
+    <string name="chat">Enter text here ...</string>
+    <string name="buttonSend">Send</string>
 </resources>

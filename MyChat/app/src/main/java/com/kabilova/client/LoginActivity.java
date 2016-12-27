@@ -23,14 +23,16 @@ import cz.msebera.android.httpclient.Header;
 
 public class LoginActivity extends AppCompatActivity {
     final String URL_PATH = "http://10.0.2.2:3000/myapp/login";
+    EditText username;
+    EditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final EditText username = (EditText) findViewById(R.id.editTextUsername);
-        final EditText password = (EditText) findViewById(R.id.editTextPassword);
+        username = (EditText) findViewById(R.id.editTextUsername);
+        password = (EditText) findViewById(R.id.editTextPassword);
 
         Button newReg = (Button) findViewById(R.id.buttonNewReg);
         newReg.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(str);
                     if (jsonObject.getBoolean("login")) {
                         Intent createAccount = new Intent(LoginActivity.this, FriendList.class);
+                        createAccount.putExtra("username", username.getText().toString());
                         startActivity(createAccount);
                     }
                     else {
