@@ -2,6 +2,7 @@ package com.tu.android.dao;
 
 import com.tu.android.model.User;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -10,5 +11,5 @@ import java.util.Set;
 public interface UserDao {
     void addUser (User user);
     boolean isUser (String username, String password);
-    Set<User> getUsers ();
+    List<User> getUsers ();
 }

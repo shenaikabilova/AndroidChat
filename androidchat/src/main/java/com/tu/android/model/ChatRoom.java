@@ -6,6 +6,6 @@ import java.util.Set;
  * Created by ShenaiKabilova
  */
 public class ChatRoom {
-    private Set<User> users;
+    private FriendList friendLists;
     private Message msg;
 }

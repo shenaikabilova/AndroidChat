@@ -5,7 +5,9 @@ import com.tu.android.dao.UserDao;
 import com.tu.android.model.User;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -46,18 +48,27 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public Set<User> getUsers() {
-        User user = new User();
-        Set<User> users = null;
+    public List<User> getUsers() {
+        List<User> users = null;
 
         try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/AndroidChat", "root", "123456")) {
-            final String QUERY = "SELECT username FROM users";
+            final String QUERY = "SELECT id, username FROM users";
+            final String QUERY_COUNT = "SELECT COUNT(*) as count FROM users";
 
             PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
+            PreparedStatement preparedStatementCount = connection.prepareStatement(QUERY_COUNT);
+
             ResultSet resultSet = preparedStatement.executeQuery();
-            users = new HashSet<>();
+            ResultSet resultSetCount = preparedStatementCount.executeQuery();
+
+            resultSetCount.next();
+            int count = resultSetCount.getInt("count");
+
+            users = new ArrayList<>(count);
 
             while (resultSet.next()) {
+                User user = new User();
+                user.setUserId(resultSet.getInt("id"));
                 user.setUsername( resultSet.getString("username"));
 
                 users.add(user);
