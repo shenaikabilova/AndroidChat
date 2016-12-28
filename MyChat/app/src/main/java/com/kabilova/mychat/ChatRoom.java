@@ -32,7 +32,7 @@ public class ChatRoom extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 str.add(msg.getText().toString());
-
+                msg.setText("");
                 // next thing you have to do is check if your adapter has changed
                 adapter.notifyDataSetChanged();
             }
