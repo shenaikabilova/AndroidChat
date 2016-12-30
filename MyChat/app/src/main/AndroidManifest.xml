@@ -19,7 +19,8 @@
         </activity>
         <activity android:name="com.kabilova.client.RegistrationActivity" />
         <activity android:name=".FriendList" />
-        <activity android:name=".ChatRoom"></activity>
+        <activity android:name=".ChatRoom" />
+        <activity android:name=".UserSettings"></activity>
     </application>
 
 </manifest>

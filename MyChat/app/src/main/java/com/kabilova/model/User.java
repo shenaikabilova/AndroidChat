@@ -1,4 +1,4 @@
-package com.kabilova.mychat;
+package com.kabilova.model;
 
 /**
  * Created by ShenaiKabilova.

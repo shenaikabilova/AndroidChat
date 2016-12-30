@@ -23,4 +23,8 @@
     <!-- ChatRoom -->
     <string name="chat">Enter text here ...</string>
     <string name="buttonSend">Send</string>
+
+    <!-- Settings -->
+    <string name="buttonUpdateUser">Update</string>
+    <string name="buttonDeleteUser">Delete</string>
 </resources>

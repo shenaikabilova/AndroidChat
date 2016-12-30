@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.kabilova.model.User;
+import com.kabilva.SessionManager.SessionManager;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -23,6 +25,7 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
@@ -34,16 +37,22 @@ public class FriendList extends AppCompatActivity {
     ListView friendList;
     List<String> list = new ArrayList<>();
     ArrayAdapter<String> adapter;
+    List<User> users = new ArrayList<>();
+    SessionManager sessionManager;
+    HashMap<String, Object> user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friend_list);
-        username = getIntent().getStringExtra("username");
+
+        sessionManager = new SessionManager(getApplicationContext());
+        sessionManager.isLoggedIn();
+        user = sessionManager.getUserDetails();
 
         friendList = (ListView) findViewById(R.id.friendList);
         tvUsername = (TextView) findViewById(R.id.username);
-        tvUsername.setText("username: " + username);
+        tvUsername.setText("username: " + user.get(SessionManager.KEY_NAME));
 
         adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, list);
 
@@ -54,12 +63,13 @@ public class FriendList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(FriendList.this, ChatRoom.class);
+                intent.putExtra("sendTo", friendList.getItemAtPosition(position).toString());
                 startActivity(intent);
             }
         });
     }
 
-    public void invokeWS (RequestParams requestParams) {
+    private void invokeWS (RequestParams requestParams) {
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(URL_PATH, requestParams, new AsyncHttpResponseHandler() {
             @Override
@@ -74,7 +84,9 @@ public class FriendList extends AppCompatActivity {
                         int id = Integer.parseInt(jsonObject.get("userId").toString());
                         String uName = jsonObject.get("username").toString();
 
-                        if(!uName.equals(username)) {
+                        users.add(new User(id, uName));
+
+                        if(!uName.equals(user.get(SessionManager.KEY_NAME))) {
                             list.add(uName);
                         }
                     }
@@ -87,24 +99,8 @@ public class FriendList extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-//                JSONObject obj = new JSONObject();
-//                try {
-//                    String un = (String) obj.get("username");
-//                    System.out.println(un);
-//                }catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//                Gson gson = new Gson();
-
-//                try {
-//                    obj.getString("friendList");
-//                String str = gson.fromJson("user:")
-
                 friendList.setAdapter(adapter);
 
-//                } catch (JSONException e) {
-//                    Toast.makeText(getApplicationContext(), "Could not return friend list!", Toast.LENGTH_LONG).show();
-//                }
             }
 
             @Override
