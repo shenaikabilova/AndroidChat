@@ -20,7 +20,7 @@ public class FriendList {
     @GET
     public String getFriendList() {
         UserDao dao = new UserDaoImpl();
-        String response = null;
+//        String response = null;
 //        JSONObject jsonObject = new JSONObject();
 
         List<User> users = new ArrayList<>();

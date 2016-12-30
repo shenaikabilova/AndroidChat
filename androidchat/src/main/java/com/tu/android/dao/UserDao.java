@@ -11,5 +11,6 @@ import java.util.Set;
 public interface UserDao {
     void addUser (User user);
     boolean isUser (String username, String password);
+    User checkExistUser (String username, String password);
     List<User> getUsers ();
 }
