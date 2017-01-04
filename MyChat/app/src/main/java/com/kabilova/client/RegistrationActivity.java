@@ -23,9 +23,9 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        final EditText username = (EditText) findViewById(R.id.editTextUsername);
-        final EditText pass1 = (EditText) findViewById(R.id.editTextPass1);
-        final EditText pass2 = (EditText) findViewById(R.id.editTextPass2);
+        final EditText username = (EditText) findViewById(R.id.settingsUsername);
+        final EditText pass1 = (EditText) findViewById(R.id.settingsPass1);
+        final EditText pass2 = (EditText) findViewById(R.id.settingsPass2);
 
         Button hasAccount = (Button) findViewById(R.id.buttonHasAccount);
         hasAccount.setOnClickListener(new View.OnClickListener() {

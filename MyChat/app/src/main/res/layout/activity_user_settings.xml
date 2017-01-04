@@ -34,11 +34,11 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:layout_below="@+id/editTextPass1"
+        android:layout_below="@+id/settingsPass1"
         android:layout_toEndOf="@+id/textView3"
         android:layout_marginStart="11dp"
         android:layout_marginTop="30dp"
-        android:id="@+id/editTextPass2"
+        android:id="@+id/settingsPass2"
         android:hint="@string/hintPass2" />
 
     <EditText
@@ -46,10 +46,10 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editTextPass1"
+        android:id="@+id/settingsPass1"
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
-        android:layout_alignStart="@+id/editTextPass2"
+        android:layout_alignStart="@+id/settingsPass2"
         android:hint="@string/hintPass1" />
 
     <EditText
@@ -57,20 +57,20 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editTextUsername"
+        android:id="@+id/settingsUsername"
         android:layout_alignBaseline="@+id/textView"
         android:layout_alignBottom="@+id/textView"
-        android:layout_alignStart="@+id/editTextPass1"
+        android:layout_alignStart="@+id/settingsPass1"
         android:hint="@string/hintEnterUsername" />
 
     <Button
         android:text="Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/buttonUpdate"
-        android:layout_alignEnd="@+id/editTextPass2"
+        android:layout_alignTop="@+id/settingsUpdate"
+        android:layout_alignEnd="@+id/settingsPass2"
         android:layout_marginEnd="47dp"
-        android:id="@+id/buttonDelete"
+        android:id="@+id/settingsDelete"
         tools:text="@string/buttonDeleteUser" />
 
     <Button
@@ -78,9 +78,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:id="@+id/buttonUpdate"
+        android:id="@+id/settingsUpdate"
         tools:text="@string/buttonUpdateUser"
-        android:layout_below="@+id/editTextPass2"
+        android:layout_below="@+id/settingsPass2"
         android:layout_alignStart="@+id/textView3"
         android:layout_marginStart="39dp" />
 
@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
-        android:layout_alignBaseline="@+id/editTextPass2"
-        android:layout_alignBottom="@+id/editTextPass2"
+        android:layout_alignBaseline="@+id/settingsPass2"
+        android:layout_alignBottom="@+id/settingsPass2"
         android:layout_alignStart="@+id/textView2" />
 </RelativeLayout>

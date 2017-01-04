@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.kabilova.mychat.com.kabilova.client.RegistrationActivity">
+    tools:context="com.kabilova.client.RegistrationActivity">
 
     <TextView
         android:text="@string/textViewUsername"
@@ -33,7 +33,7 @@
         android:fontFamily="casual"
         android:textSize="14sp"
         android:textStyle="normal|bold"
-        android:layout_below="@+id/editTextPass1"
+        android:layout_below="@+id/settingsPass1"
         android:layout_toEndOf="@+id/textViewPass1"
         android:layout_marginTop="139dp" />
 
@@ -42,19 +42,19 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editTextPass1"
+        android:id="@+id/settingsPass1"
         android:hint="@string/hintPass1"
         android:fontFamily="casual"
         android:textSize="14sp"
-        android:layout_below="@+id/editTextUsername"
-        android:layout_alignStart="@+id/editTextUsername" />
+        android:layout_below="@+id/settingsUsername"
+        android:layout_alignStart="@+id/settingsUsername" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editTextUsername"
+        android:id="@+id/settingsUsername"
         android:hint="@string/hintUsername"
         android:textSize="14sp"
         android:fontFamily="casual"
@@ -72,8 +72,8 @@
         android:fontFamily="casual"
         android:textSize="14sp"
         android:textStyle="normal|bold"
-        android:layout_alignBaseline="@+id/editTextPass1"
-        android:layout_alignBottom="@+id/editTextPass1"
+        android:layout_alignBaseline="@+id/settingsPass1"
+        android:layout_alignBottom="@+id/settingsPass1"
         android:layout_alignStart="@+id/textViewUsername" />
 
     <EditText
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editTextPass2"
+        android:id="@+id/settingsPass2"
         android:hint="@string/hintPass2"
         android:fontFamily="casual"
         android:textSize="14sp"
@@ -99,7 +99,7 @@
         android:textSize="14sp"
         android:textStyle="normal|bold"
         android:layout_marginTop="11dp"
-        android:layout_below="@+id/editTextPass1"
+        android:layout_below="@+id/settingsPass1"
         android:layout_alignStart="@+id/textViewPass1" />
 
     <Button
@@ -111,7 +111,7 @@
         android:textSize="14sp"
         android:fontFamily="casual"
         android:textStyle="normal|bold"
-        android:layout_below="@+id/editTextPass2"
+        android:layout_below="@+id/settingsPass2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp" />
 

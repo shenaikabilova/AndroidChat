@@ -39,7 +39,7 @@ public class FriendList extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     List<User> users = new ArrayList<>();
     SessionManager sessionManager;
-    HashMap<String, Object> user;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class FriendList extends AppCompatActivity {
 
         friendList = (ListView) findViewById(R.id.friendList);
         tvUsername = (TextView) findViewById(R.id.username);
-        tvUsername.setText("username: " + user.get(SessionManager.KEY_NAME));
+        tvUsername.setText("username: " + user.getUsername());
 
         adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, list);
 
@@ -63,8 +63,14 @@ public class FriendList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(FriendList.this, ChatRoom.class);
-                intent.putExtra("sendTo", friendList.getItemAtPosition(position).toString());
-                startActivity(intent);
+                for(User u : users) {
+                    if(u.getUsername().equals(friendList.getItemAtPosition(position).toString())) {
+                        intent.putExtra("sendToID", u.getUserId());
+                        startActivity(intent);
+                    }
+//                    intent.putExtra("sendTo", friendList.getItemAtPosition(position).toString());
+//                    startActivity(intent);
+                }
             }
         });
     }
@@ -74,7 +80,6 @@ public class FriendList extends AppCompatActivity {
         client.get(URL_PATH, requestParams, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                System.out.print(tvUsername);
                 try{
                     String str = new String(responseBody, "UTF-8");
                     JSONArray jsonArray = new JSONArray(str);
@@ -86,7 +91,7 @@ public class FriendList extends AppCompatActivity {
 
                         users.add(new User(id, uName));
 
-                        if(!uName.equals(user.get(SessionManager.KEY_NAME))) {
+                        if(!uName.equals(user.getUsername())) {
                             list.add(uName);
                         }
                     }

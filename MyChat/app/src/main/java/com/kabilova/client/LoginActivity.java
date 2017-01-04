@@ -16,7 +16,6 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -41,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
 
         sessionManager = new SessionManager(getApplicationContext());
 
-        username = (EditText) findViewById(R.id.editTextUsername);
+        username = (EditText) findViewById(R.id.settingsUsername);
         password = (EditText) findViewById(R.id.editTextPassword);
 
         Button newReg = (Button) findViewById(R.id.buttonNewReg);

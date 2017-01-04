@@ -54,11 +54,15 @@ public class SessionManager {
     }
 
     //Get stored session data
-    public HashMap<String, Object> getUserDetails() {
-        HashMap<String, Object> user = new HashMap<String, Object>();
-        user.put(KEY_ID, sharedPreferences.getInt(KEY_ID, 0));
-        user.put(KEY_NAME, sharedPreferences.getString(KEY_NAME, null));
-        user.put(KEY_PASSWORD, sharedPreferences.getString(KEY_PASSWORD, null));
+    public User getUserDetails() {
+//        HashMap<String, User> user = new HashMap<String, Object>();
+//        user.put(KEY_ID, sharedPreferences.getInt(KEY_ID, 0));
+//        user.put(KEY_NAME, sharedPreferences.getString(KEY_NAME, null));
+//        user.put(KEY_PASSWORD, sharedPreferences.getString(KEY_PASSWORD, null));
+        User user = new User();
+        user.setUserId(sharedPreferences.getInt(KEY_ID, 0));
+        user.setUsername(sharedPreferences.getString(KEY_NAME, null));
+        user.setPassword(sharedPreferences.getString(KEY_PASSWORD, null));
         return user;
     }
 
