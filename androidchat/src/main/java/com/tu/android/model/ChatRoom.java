@@ -1,37 +1,49 @@
 package com.tu.android.model;
 
-import java.util.Set;
-
 /**
  * Created by ShenaiKabilova
  */
 public class ChatRoom {
-    private String sendFrom;
-    private String sendTo;
+    private int chatRoomID;
+    private int sendFromID;
+    private String sendFromUsername;
+    private int sendToID;
+    private String sendToUsername;
     private String message;
     private String timestamp;
 
-    public ChatRoom(String sendFrom, String sendTo, String message, String timestamp) {
-        this.sendFrom = sendFrom;
-        this.sendTo = sendTo;
+    public ChatRoom() {
+    }
+
+    public ChatRoom(int sendFromID, int sendToID, String message, String timestamp) {
+        this.sendFromID = sendFromID;
+        this.sendToID = sendToID;
         this.message = message;
         this.timestamp = timestamp;
     }
 
-    public String getSendFrom() {
-        return sendFrom;
+    public int getChatRoomID() {
+        return chatRoomID;
     }
 
-    public void setSendFrom(String username) {
-        this.sendFrom = username;
+    public void setChatRoomID(int chatRoomID) {
+        this.chatRoomID = chatRoomID;
     }
 
-    public String getSendTo() {
-        return sendTo;
+    public int getSendFromID() {
+        return sendFromID;
     }
 
-    public void setSendTo(String sendTo) {
-        this.sendTo = sendTo;
+    public void setSendFromID(int username) {
+        this.sendFromID = username;
+    }
+
+    public int getSendToID() {
+        return sendToID;
+    }
+
+    public void setSendToID(int sendToID) {
+        this.sendToID = sendToID;
     }
 
     public String getMessage() {
@@ -48,5 +60,21 @@ public class ChatRoom {
 
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public String getSendFromUsername() {
+        return sendFromUsername;
+    }
+
+    public void setSendFromUsername(String sendFromUsername) {
+        this.sendFromUsername = sendFromUsername;
+    }
+
+    public String getSendToUsername() {
+        return sendToUsername;
+    }
+
+    public void setSendToUsername(String sendToUsername) {
+        this.sendToUsername = sendToUsername;
     }
 }

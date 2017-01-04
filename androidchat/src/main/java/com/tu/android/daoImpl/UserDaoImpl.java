@@ -18,7 +18,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void addUser(User user) {
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/AndroidChat", "root", "123456")) {
-            final String QUERY = "INSERT INTO users(username, password) VALUES(?,?)";
+            final String QUERY = "INSERT INTO users(USERNAME, PASSWORD) VALUES(?,?)";
 
             PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
             preparedStatement.setString(1, user.getUsername());
@@ -33,7 +33,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public boolean isUser(String username, String password) {
         try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/AndroidChat", "root", "123456")) {
-            final String QUERY = "SELECT id, username, password FROM users WHERE username = '" + username + "' and password = '" + password + "'";
+            final String QUERY = "SELECT ID, USERNAME, PASSWORD FROM users WHERE USERNAME = '" + username + "' and PASSWORD = '" + password + "'";
 
             PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -52,13 +52,13 @@ public class UserDaoImpl implements UserDao {
         User user = null;
 
         try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/AndroidChat", "root", "123456")) {
-            final String QUERY = "SELECT id, username, password FROM users WHERE username = '" + username + "' and password = '" + password + "'";
+            final String QUERY = "SELECT ID, USERNAME, PASSWORD FROM users WHERE USERNAME = '" + username + "' and PASSWORD = '" + password + "'";
 
             PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
-                user = new User(resultSet.getInt("id"), resultSet.getString("username"), resultSet.getString("password"));
+                user = new User(resultSet.getInt("ID"), resultSet.getString("USERNAME"), resultSet.getString("USERNAME"));
                 return user;
             }
         } catch (SQLException e) {
@@ -72,7 +72,7 @@ public class UserDaoImpl implements UserDao {
         List<User> users = null;
 
         try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/AndroidChat", "root", "123456")) {
-            final String QUERY = "SELECT id, username FROM users";
+            final String QUERY = "SELECT ID, USERNAME FROM users";
             final String QUERY_COUNT = "SELECT COUNT(*) as count FROM users";
 
             PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
@@ -88,8 +88,8 @@ public class UserDaoImpl implements UserDao {
 
             while (resultSet.next()) {
                 User user = new User();
-                user.setUserId(resultSet.getInt("id"));
-                user.setUsername( resultSet.getString("username"));
+                user.setUserId(resultSet.getInt("ID"));
+                user.setUsername( resultSet.getString("USERNAME"));
 
                 users.add(user);
             }
